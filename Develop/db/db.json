@@ -2,26 +2,26 @@
     {
         "title": "Hello",
         "text": "Testing this functionality.",
-        "noteId": "54a2"
+        "id": "54a2"
     },
     {
         "title": "failed?",
         "text": "wrote to db but failed to fetch?",
-        "noteId": "ba6e"
+        "id": "ba6e"
     },
     {
         "title": "Test",
         "text": "testing ",
-        "noteId": "a3dd"
+        "id": "a3dd"
     },
     {
         "title": "testing",
         "text": "testing this\n",
-        "noteId": "466e"
+        "id": "466e"
     },
     {
         "title": "okay another",
         "text": "one\n",
-        "noteId": "2cc7"
+        "id": "2cc7"
     }
 ]
