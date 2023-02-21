@@ -1,27 +1,12 @@
 [
     {
-        "title": "Hello",
-        "text": "Testing this functionality.",
-        "id": "54a2"
+        "title": "All is working!",
+        "text": "Including the DELETE function!",
+        "id": "6eae"
     },
     {
-        "title": "failed?",
-        "text": "wrote to db but failed to fetch?",
-        "id": "ba6e"
-    },
-    {
-        "title": "Test",
-        "text": "testing ",
-        "id": "a3dd"
-    },
-    {
-        "title": "testing",
-        "text": "testing this\n",
-        "id": "466e"
-    },
-    {
-        "title": "okay another",
-        "text": "one\n",
-        "id": "2cc7"
+        "title": "Issues faced",
+        "text": "Received one error due to using nodemon in the dev environment - it was automatically restarting the server after updating the db.json, which meant steps after that were failing. But nodemon was super convenient...",
+        "id": "437d"
     }
 ]

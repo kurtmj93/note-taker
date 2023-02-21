@@ -1,5 +1,5 @@
 const notes = require('express').Router();
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid'); // to attach unique id to notes
 
 // GET Route for retrieving all notes
@@ -27,8 +27,19 @@ notes.post('/', (req, res) => {
 });
 
 // DELETE Route for deleting notes
-notes.delete('/', (req, res) => {
+notes.delete('/:id', (req, res) => {
+    const noteId = req.params.id;
+    readFromFile('./db/db.json')
+        .then((data) => JSON.parse(data))
+        .then((json) => {
 
+            // this makes a new array with all tips except the one with id passed by req
+            const result = json.filter((note) => note.id !== noteId);
+            
+            writeToFile('./db/db.json', result);
+            res.json();
+
+        });
 });
 
 module.exports = notes;
