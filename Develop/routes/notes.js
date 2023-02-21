@@ -1,8 +1,8 @@
 const notes = require('express').Router();
-const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils');
+const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils'); // borrowed these utils from a previous activity
 const uuid = require('../helpers/uuid'); // to attach unique id to notes
 
-// GET Route for retrieving all notes
+// GET Route for retrieving notes
 notes.get('/', (req, res) =>
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 );
