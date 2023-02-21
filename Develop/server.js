@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const PORT = 3001;
+const api = require('./routes/routes.js');
 
 // uses static resources in public folder
 app.use(express.static('public'));
@@ -10,6 +11,7 @@ app.use(express.static('public'));
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api', api);
 
 
 // GET Route for homepage
