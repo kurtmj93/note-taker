@@ -2,7 +2,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 3001;
+
+// process.env.PORT allows heroku to set the port
+let port = process.env.PORT;
+// if heroku doesn't set the port (local), port = 3001
+if (port == null || port == "") {
+  port = 3001;
+}
+
 
 // use static resources in public folder
 app.use(express.static('public'));
@@ -27,6 +34,6 @@ app.get('/notes', (req, res) =>
 );
 
 // initialize app
-app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
+app.listen(port, () =>
+  console.log(`App listening at http://localhost:${port} 🚀`)
 );
